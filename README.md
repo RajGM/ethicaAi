@@ -45,6 +45,8 @@ cd sentiment-analysis-app
 Install the dependencies.
 npm install
 
+Add API keys to .env.local file
+
 Run the development server.
 npm run dev
 
