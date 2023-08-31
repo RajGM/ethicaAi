@@ -1,35 +1,94 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Sentiment Analysis and Review Voting App
+
+This is a web application built using Next.js and React that allows users to submit reviews, analyze their sentiment, and vote on them. The sentiment analysis is performed using the Hugging Face sentiment analysis model through an API route. Users can upvote or downvote reviews based on their preference.
+
+## Table of Contents
+
+- [Sentiment Analysis and Review Voting App](#sentiment-analysis-and-review-voting-app)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [Demo](#demo)
+  - [Installation](#installation)
+- [Sentiment Analysis and Review Voting App](#sentiment-analysis-and-review-voting-app-1)
+  - [Getting Started](#getting-started)
+  - [API Route](#api-route)
+  - [Technologies Used](#technologies-used)
+  - [Contributing](#contributing)
+  - [License](#license)
+
+## Features
+
+- User-friendly interface for submitting reviews and analyzing their sentiment.
+- Real-time sentiment analysis using the Hugging Face sentiment analysis model.
+- Review voting system to express approval or disapproval.
+- Toggle review input to declutter the interface.
+- Dynamic sorting of reviews based on vote count.
+- Responsive design for different screen sizes.
+
+## Demo
+
+**[View Live Demo](#)** - *(Replace with your deployment link)*
+
+![App Screenshot](/screenshot.png)
+
+## Installation
+
+1. Clone the repository or download the ZIP file.
+
+```bash
+Navigate to the project directory.
+git clone https://github.com/RajGM/ethicaAi.git
+
+Install the dependencies.
+cd sentiment-analysis-app
+
+Install the dependencies.
+npm install
+
+Run the development server.
+npm run dev
+
+Open your web browser and visit http://localhost:3000 to access the application.
+
+Enter a review in the textarea, click "Analyze" to determine its sentiment, and vote on reviews.
+```
+
+# Sentiment Analysis and Review Voting App
+
+Welcome to the Sentiment Analysis and Review Voting App! This web application is built using Next.js and React, allowing users to submit reviews, analyze their sentiment, and vote on them. The sentiment analysis is powered by the Hugging Face sentiment analysis model through an API route.
 
 ## Getting Started
 
-First, run the development server:
+1. Open your web browser and visit `http://localhost:3000` to access the application.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+2. Enter a review in the provided textarea.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Click the "Analyze" button to determine the sentiment of the review.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+4. You can also vote on existing reviews by using the upvote and downvote buttons.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## API Route
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+The sentiment analysis functionality is provided by an API route located at `/pages/api/analyze.js`. This route handles the sentiment analysis using the Hugging Face sentiment analysis model.
 
-## Learn More
+For more detailed information about the API route's functionality, refer to the code comments in the `analyze.js` file.
 
-To learn more about Next.js, take a look at the following resources:
+## Technologies Used
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The app leverages the following technologies:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- [Next.js](https://nextjs.org/)
+- [React](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Hugging Face Model](https://huggingface.co/models)
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Contributions are highly appreciated! If you come across any issues or have suggestions for improvements, please don't hesitate to:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# ethicaAi
+- Create a pull request
+- Submit an issue
+
+## License
+
+This project is licensed under the [MIT License](https://opensource.org/license/mit/).

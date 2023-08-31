@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast,Toaster } from 'react-hot-toast';
 
 // Define the Home component
 export default function Home() {
@@ -9,12 +10,12 @@ export default function Home() {
   const [showTextarea, setShowTextarea] = useState(false);
 
   // Function to add a new review
-  const addReview = () => {
+  const addReview = (inputSentiment) => {
     const newReview = {
       text: reviewText,
       date: new Date().toLocaleString(),
       votes: 0,
-      sentiment: analysisResult,
+      sentiment: inputSentiment,
     };
 
     setReviews([...reviews, newReview]);
@@ -23,19 +24,47 @@ export default function Home() {
 
   // Function to analyze a review using an API
   const analyzeReview = async () => {
+
+    toast.loading('Analyzing review...', {
+      icon: '⏳',
+      style: {
+        backgroundColor: '#007BFF',
+        color: '#fff',
+      },
+    });
+
     try {
       const response = await fetch('/api/analyze', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ text: reviewText}),
+        body: JSON.stringify({ text: reviewText }),
       });
 
       const data = await response.json();
       setAnalysisResult(data.sentiment);
-      addReview();
+      addReview(data.sentiment);
+      toast.dismiss();
+      toast.success('Review analyzed successfully!', {
+        icon: '👍',
+        style: {
+          backgroundColor: '#5CB85C',
+          color: '#fff',
+        },
+      });
+
+
     } catch (error) {
+      toast.dismiss();
+      toast.error('An error occurred while analyzing the review. Please try again.', {
+        icon: '❌',
+        style: {
+          backgroundColor: '#D9534F',
+          color: '#fff',
+        },
+      });
+
       console.error('Error analyzing review:', error);
     }
   };
@@ -62,7 +91,7 @@ export default function Home() {
   // Render the component
   return (
     <div className="container mx-auto p-4">
-
+      <Toaster/>
       {/* Button to toggle review input */}
       <div className="flex justify-center mb-4">
         <button
