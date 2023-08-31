@@ -7,7 +7,6 @@ This is a web application built using Next.js and React that allows users to sub
 - [Sentiment Analysis and Review Voting App](#sentiment-analysis-and-review-voting-app)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
-  - [Demo](#demo)
   - [Installation](#installation)
 - [Sentiment Analysis and Review Voting App](#sentiment-analysis-and-review-voting-app-1)
   - [Getting Started](#getting-started)
@@ -25,12 +24,7 @@ This is a web application built using Next.js and React that allows users to sub
 - Dynamic sorting of reviews based on vote count.
 - Responsive design for different screen sizes.
 
-## Demo
-
-**[View Live Demo](#)** - *(Replace with your deployment link)*
-
-![App Screenshot](/screenshot.png)
-
+  
 ## Installation
 
 1. Clone the repository or download the ZIP file.
